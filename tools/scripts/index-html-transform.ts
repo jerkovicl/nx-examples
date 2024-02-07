@@ -1,9 +1,9 @@
-// import cheerio from 'cheerio';
-// import minifier from 'html-minifier';
+import cheerio from 'cheerio';
+import * as minifier from 'html-minifier';
 
 export default function (indexContent: string): string {
-  /*   const $ = cheerio.load(indexContent);
-  const baseUrl = 'https://www.fiyu.online';
+  const $ = cheerio.load(indexContent);
+  const baseUrl = 'https://www.abc.com';
   $('head').append(`<link rel="preconnect" href="${baseUrl}">`);
 
   const minified: string = minifier.minify($.html(), {
@@ -11,6 +11,6 @@ export default function (indexContent: string): string {
     removeAttributeQuotes: true,
     collapseWhitespace: true,
   });
-  return minified; */
-  return indexContent;
+  return minified;
+  //  return indexContent;
 }
