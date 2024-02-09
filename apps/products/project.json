@@ -87,6 +87,16 @@
         "buildTarget": "products:build"
       }
     },
+    "generate-env-files": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "node -v"
+          }
+        ]
+      }
+    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
@@ -97,6 +107,12 @@
           "buildTarget": "products:build:production"
         }
       },
+      "dependsOn": [
+        {
+          "params": "ignore",
+          "target": "generate-env-files"
+        }
+      ],
       "executor": "@nx/angular:dev-server",
       "options": {
         "buildTarget": "products:build"
